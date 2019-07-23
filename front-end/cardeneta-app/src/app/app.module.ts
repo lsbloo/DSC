@@ -25,6 +25,8 @@ import { RegisterAppComponent } from './register-app/register-app.component';
     BrowserModule
   ],
   providers: [],
-  bootstrap: [AppComponent,LoginAppComponent,DashAppComponent]
+  bootstrap: [AppComponent,LoginAppComponent,DashAppComponent
+  ,ListAlunosAppComponent,ListCursosAppComponent,ListMatriculaAppComponent,
+  ListTurmaAppComponent,RegisterAppComponent]
 })
 export class AppModule { }
