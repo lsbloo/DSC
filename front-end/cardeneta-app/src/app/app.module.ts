@@ -1,20 +1,38 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { NgModule, ɵSWITCH_COMPILE_NGMODULE__POST_R3__ } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { DashAppComponent } from './dash-app/dash-app.component';
-import { LoginAppComponent } from './login-app/login-app.component';
+import { DashComponent } from './dash/dash.component';
+import { LoginComponent } from './login/login.component';
 import { ListAlunosAppComponent } from './list-alunos-app/list-alunos-app.component';
 import { ListCursosAppComponent } from './list-cursos-app/list-cursos-app.component';
 import { ListMatriculaAppComponent } from './list-matricula-app/list-matricula-app.component';
 import { ListTurmaAppComponent } from './list-turma-app/list-turma-app.component';
 import { RegisterAppComponent } from './register-app/register-app.component';
+import { HomeComponent } from './home-page/home.component';
+import { HomeModule } from './home-page/home.module';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashComponent
+  }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    DashAppComponent,
-    LoginAppComponent,
+    DashComponent,
+    LoginComponent,
     ListAlunosAppComponent,
     ListCursosAppComponent,
     ListMatriculaAppComponent,
@@ -22,11 +40,11 @@ import { RegisterAppComponent } from './register-app/register-app.component';
     RegisterAppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HomeModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [AppComponent,LoginAppComponent,DashAppComponent
-  ,ListAlunosAppComponent,ListCursosAppComponent,ListMatriculaAppComponent,
-  ListTurmaAppComponent,RegisterAppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
