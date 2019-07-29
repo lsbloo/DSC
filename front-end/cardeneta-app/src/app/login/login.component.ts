@@ -37,10 +37,12 @@ export class LoginComponent implements OnInit {
     const data = this.formularioAuth.value;
     var user = new Auth(data.email,data.password);
    var result = this.loginService.getAuth(user.email,user.password);
-   // redirect to dashboard AUHEAUEAUEH;
    if(result){
-        setTimeout( () => {this.router.navigate(['/dashboard']);},2000);
+        setTimeout( () => {this.router.navigate(['/dashboard']);},1000);
         this.loginService.createSessionUserAuth(user.email);
+   }else{
+     //
+     alert("Email ou password incorreto!");
    }
   
 
