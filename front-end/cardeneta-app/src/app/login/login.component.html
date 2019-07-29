@@ -1,0 +1,24 @@
+<div class="login-container">
+    <div class="row centered">
+        <div class="col-md-3 centered text-center">
+            <h3>Realizar Login</h3>
+            <form class="form-horizontal" [formGroup]="formularioAuth" (ngSubmit)="post()" >
+                <div class="form-group">
+                    <input type="text" name="email"  class="form-control" formControlName="email" placeholder="Seu Email *" value="email" id="email" />
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password"  class="form-control" formControlName="password" placeholder="Sua Senha *" value="password"  id="password"/>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </div>
+                <div class="form-group">
+                    <a href="forget_pass" class="forget-pwd" value="">Esqueceu sua senha?</a>
+                </div>
+                <div class="form-group">
+                        <a href="register_account" class="forget-pwd" value="register">Registre-se aqui !</a>
+                    </div>
+            </form>
+        </div>
+        </div>
+</div>

@@ -1,0 +1,10 @@
+
+.navbar { background: #1516169c; transition: all .6s; backface-visibility: hidden; }
+.navbar-dark .navbar-nav { font-size: 15px; color: rgb(99, 95, 95); text-transform: uppercase; }
+.navbar-dark .navbar-nav .nav-link { color: #437ecc; color:rgb(247, 241, 241); border: 0; }
+.navbar-brand {
+	width: 123px;
+	background: url(../../../assets/img/logo2.png) left center no-repeat;
+	border: 0;
+	text-indent: -99999px;
+}
