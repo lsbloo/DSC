@@ -16,6 +16,7 @@ export class Cursos{
         this.idioma_id=idioma_id;
     }
 }
+
 export class Aluno{
     nome: String;
     cpf: String;

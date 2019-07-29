@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-import { NgModule, ɵSWITCH_COMPILE_NGMODULE__POST_R3__ } from '@angular/core';
+import { NgModule, ɵSWITCH_COMPILE_NGMODULE__POST_R3__, Component } from '@angular/core';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {FormBuilder} from '@angular/forms';
 
@@ -29,7 +29,26 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    component: DashComponent
+    component: DashComponent,
+    children:
+    [
+                {
+                path: 'dashboard-list-cursos',
+                component: ListCursosAppComponent
+                },
+                {
+                  path: 'dashboard-list-alunos',
+                  component: ListAlunosAppComponent
+                },
+                {
+                  path: 'dashboard-list-matricula',
+                  component: ListMatriculaAppComponent
+                },
+                {
+                  path: 'dashboard-list-turma',
+                  component: ListTurmaAppComponent
+                }
+    ]
   }
 ];
 
