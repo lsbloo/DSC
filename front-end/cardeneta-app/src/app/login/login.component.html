@@ -2,15 +2,15 @@
     <div class="row centered">
         <div class="col-md-3 centered text-center">
             <h3>Realizar Login</h3>
-            <form>
+            <form class="form-horizontal" [formGroup]="formularioAuth" (ngSubmit)="post()" >
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Seu Email *" value="email" />
+                    <input type="text" name="email"  class="form-control" formControlName="email" placeholder="Seu Email *" value="email" id="email" />
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Sua Senha *" value="password" />
+                    <input type="password" name="password"  class="form-control" formControlName="password" placeholder="Sua Senha *" value="password"  id="password"/>
                 </div>
                 <div class="form-group">
-                    <a type="submit" class="btn-submit" [routerLink]="['/dashboard']">Enviar</a>
+                    <button type="submit" class="btn-submit">Enviar</button>
                 </div>
                 <div class="form-group">
                     <a href="forget_pass" class="forget-pwd" value="">Esqueceu sua senha?</a>
