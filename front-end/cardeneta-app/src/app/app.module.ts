@@ -19,6 +19,10 @@ import {LoginService} from "./login/login.service";
 
 const routes: Routes = [
   {
+    path: 'register',
+    component: RegisterAppComponent
+  },
+  {
     path: '',
     component: HomeComponent
   },
