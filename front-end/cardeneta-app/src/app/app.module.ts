@@ -17,6 +17,7 @@ import { HomeComponent } from './home-page/home.component';
 import { HomeModule } from './home-page/home.module';
 import {LoginService} from "./login/login.service";
 import {CursoService} from './list-cursos-app/cursos.service';
+import {AlunoService} from './list-alunos-app/aluno.service';
 
 
 const routes: Routes = [
@@ -76,7 +77,7 @@ const routes: Routes = [
     FormsModule,
   ],
   
-  providers: [LoginService,RegisterService,CursoService],
+  providers: [LoginService,RegisterService,CursoService,AlunoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
