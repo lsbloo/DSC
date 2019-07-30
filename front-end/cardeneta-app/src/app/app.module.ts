@@ -16,10 +16,12 @@ import { RegisterAppComponent } from './register-app/register-app.component';
 import { HomeComponent } from './home-page/home.component';
 import { HomeModule } from './home-page/home.module';
 import {LoginService} from "./login/login.service";
+import {CursoService} from './list-cursos-app/cursos.service';
+
 
 const routes: Routes = [
   {
-    path: 'register',
+    path: 'registeruser',
     component: RegisterAppComponent
   },
   {
@@ -73,7 +75,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [LoginService,RegisterService],
+  
+  providers: [LoginService,RegisterService,CursoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

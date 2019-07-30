@@ -18,12 +18,29 @@ export class RegisterAppComponent implements OnInit {
   user: User;
 
   // --> 
-  constructor(registerService: RegisterService, formularioRegister: FormGroup, router: Router) {
+  constructor(registerService: RegisterService, formularioRegister: FormGroup, formBuilder: FormBuilder,router: Router) {
     this.registerService=registerService;
     this.formularioRegister=formularioRegister;
     this.router=router;
+    this.formBuilder = formBuilder;
+    this.buildForm();
    }
 
+
+   buildForm(){
+     this.formularioRegister = this.formBuilder.group({
+        email: [null],
+        password: [null],
+        password_confirm: [null]
+     });
+   }
+
+   postRegister(){
+    const data = this.formularioRegister.value;
+     
+
+
+   }
   ngOnInit() {
   }
 
