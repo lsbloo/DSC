@@ -5,7 +5,7 @@ import { LogService } from '../shared/log.service';
 @Injectable()
 export class CursosService {
 
-    exibirCursoCriado: any;
+   static exibirCursoCriado = new EventEmitter<string>();
    static  criarNovoCurso = new EventEmitter<string>();
 
 
@@ -13,7 +13,7 @@ export class CursosService {
 
     constructor(private logService: LogService){
         console.log('CursosService');
-        this.exibirCursoCriado = new EventEmitter<string>();
+       
     }
 
     getCursos() {
@@ -24,7 +24,7 @@ export class CursosService {
     addCursos(curso: string){
         this.logService.consoleLog('Criando novo curso' + curso)
         this.cursos.push(curso);
-        this.exibirCursoCriado.emit(curso);
+        CursosService.exibirCursoCriado.emit(curso);
         CursosService.criarNovoCurso.emit(curso);
     }
 }

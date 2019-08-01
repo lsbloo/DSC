@@ -18,7 +18,7 @@ export class ReceberCursoComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.cursoService.exbirCursoCriado.subscribe(
+    CursosService.exibirCursoCriado.subscribe(
       cursoCriado => this.curso = cursoCriado
     );
   }

@@ -16,8 +16,9 @@ import { RegisterAppComponent } from './register-app/register-app.component';
 import { HomeComponent } from './home-page/home.component';
 import { HomeModule } from './home-page/home.module';
 import {LoginService} from "./login/login.service";
-
-
+import { CursosService} from "./cursos/cursos.service";
+import { CusosComponent} from './cursos/CursosComponent';
+import {CursosComponent} from './cursos/cursos.component';
 
 const routes: Routes = [
   {
@@ -79,9 +80,11 @@ const routes: Routes = [
     LoginComponent,
     ListAlunosAppComponent,
     ListCursosAppComponent,
+    CusosComponent,
     ListMatriculaAppComponent,
     ListTurmaAppComponent,
     RegisterAppComponent,
+    CursosComponent
     
   ],
   imports: [
@@ -91,7 +94,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [LoginService],
+  providers: [LoginService,CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

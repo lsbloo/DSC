@@ -8,7 +8,7 @@ import { CursosService } from '../cursos/cursos.service';
   styleUrls: ['./cursos.component.css'],
   providers: [CursosService]
 })
-export class CursoService implements OnInit {
+export class CusosComponent implements OnInit {
 
   cursos: string[] = [];
   cursosService: CursosService;
