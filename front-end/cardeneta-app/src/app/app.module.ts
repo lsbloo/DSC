@@ -18,6 +18,7 @@ import { HomeModule } from './home-page/home.module';
 import {LoginService} from "./login/login.service";
 
 
+
 const routes: Routes = [
   {
     path: '',
@@ -30,7 +31,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashComponent,
-    children:
+/*     children:
     [
                 {
                 path: 'dashboard-list-cursos',
@@ -48,8 +49,27 @@ const routes: Routes = [
                   path: 'dashboard-list-turma',
                   component: ListTurmaAppComponent
                 }
-    ]
-  }
+    ] */
+
+  },
+  {
+    path: 'list-matricula',
+    component: ListMatriculaAppComponent
+  },
+  {
+    path: 'list-alunos',
+    component: ListAlunosAppComponent
+  },
+  {
+  path: 'list-cursos',
+  component: ListCursosAppComponent
+  },
+  
+  {
+  path: 'list-turma',
+  component: ListTurmaAppComponent
+  },
+  
 ];
 
 @NgModule({
@@ -61,7 +81,8 @@ const routes: Routes = [
     ListCursosAppComponent,
     ListMatriculaAppComponent,
     ListTurmaAppComponent,
-    RegisterAppComponent
+    RegisterAppComponent,
+    
   ],
   imports: [
     BrowserModule,
