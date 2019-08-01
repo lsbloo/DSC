@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CursosService } from './cursos.service';
+import { CursosService } from '../cursos/cursos.service';
 
 @Component({
   selector: 'app-cursos',
@@ -8,22 +8,18 @@ import { CursosService } from './cursos.service';
   styleUrls: ['./cursos.component.css'],
   providers: [CursosService]
 })
-export class CursosService implements OnInit {
+export class CursoService implements OnInit {
 
   cursos: string[] = [];
-  //cursosService: CursosService;
+  cursosService: CursosService;
 
-  constructor(private cursosService: CursosService) { 
-    //this.cursosService = new CursosService();
-    //this.cursosService = _cursosService;
+  constructor(cursosService: CursosService) { 
+      this.cursosService=cursosService;
+
   }
 
   ngOnInit() {
     this.cursos = this.cursosService.getCursos();
-
-    CursosService.criouNovoCurso.subscribe(
-      curso => this.cursos.push(curso)
-    );
   }
 
 }
