@@ -13,49 +13,11 @@ import {AlunoService} from './aluno.service';
 })
 export class ListAlunosAppComponent implements OnInit {
 
-  aluno: Aluno;
-  fomularioAluno: FormGroup;
-  formBuilder: FormBuilder;
-  router: Router;
-  alunoService: AlunoService;
-
-  constructor(formBuilder: FormBuilder , alunoService: AlunoService, router: Router) {
-    this.alunoService=alunoService;
-    this.formBuilder=formBuilder;
-    this.router=router;
-    this.criarForm();
-   }
-
-
-  criarForm(){
-    this.fomularioAluno = this.formBuilder.group({
-        nome:[null],
-        cpf:[null],
-        responsavel:[null],
-        contato: [null],
-        endereco: [null],
-        dataNascimento: [null],
-        email: [null]
-    });
-  }
-  postInsert(){
-
-    const data = this.fomularioAluno.value;
-    this.aluno = new Aluno(data.nome,data.cpf,data.responsavel,data.contato,data.endereco,data.dataNascimento,data.email);
-    var result = this.alunoService.insert(this.aluno);
-    if(result){
-      // ok
-    }else{
-      // aluno ja existe;
-    }
-
-  }
-
-  getCursos(){
-    var result = this.alunoService.getAll();
-    if(result!=null){
-      // ok
-    }
+  cabecalho: string;
+  texto: String;
+  constructor() { 
+    this.cabecalho = 'Alunos'
+    this.texto = 'Nesta sessão você encontrará a lista de todos os alunos cadastrados em nossa instituição. A esquerda você encontrará nosso menu, onde terá acesso a todas as informações disponíveis no nosso sistema. Fique a vontade para navegar por nosso portal '
   }
 
   ngOnInit() {

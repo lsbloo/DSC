@@ -1,1 +1,144 @@
-<p>list-alunos-app works!</p>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listar curso</title>
+
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+
+        .opcoes {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: flex-end;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .btn {
+            border: black 2px solid;
+            border-radius: 6px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none; 
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div class="bg-light border-right" id="sidebar">
+            <div class="sidebar-heading"> </div>
+            <a class="navbar-brand" href="#" id="navbar-brand" >School Control</a>
+            
+            <div class="list-group list-group-flush">
+                <a [routerLink]="['/list-cursos']" class="list-group-item list-group-item-action bg-dark" id="bg-transition">Cursos</a>
+                <a [routerLink]="['/list-turma']" class="list-group-item list-group-item-action bg-dark" id="bg-transition">Turmas</a>
+                <a [routerLink]="['/list-alunos']" class="list-group-item list-group-item-action bg-dark" id="bg-transition">Aluno</a>
+            </div>
+        </div>
+        <!-- Página-->
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom" id="navbar-gradient">
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" [routerLink]="['']">sair</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container-fluid">
+                <h1 class="mt-4">{{cabecalho}}</h1>
+                <p>{{texto}}</p>
+                    <table>
+                        <tr>
+                          <th>Nome</th>
+                          <th>Data Nascimento</th>
+                          <th>Responsável</th>
+                          <th>Turma</th>
+                          <th>Nº Matricula</th>
+                        </tr>
+                        <tr>
+                          <td>Carlos</td>
+                          <td>22 abril</td>
+                          <td>José</td>
+                          <td>2</td>
+                          <td>001452</td>
+                        </tr>
+                        <tr>
+                          <td>Claudia</td>
+                          <td>30 julho</td>
+                          <td>Zuleide</td>
+                          <td>3</td>
+                          <td>012452</td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                          <td></td>
+                        </tr>      
+                      </table>
+                      <div class="opcoes">
+                        <div class="btn">
+                            <a href="#" >Editar</a>
+                        </div>
+                        <div class="btn">
+                            <a href="#" >Novo Curso</a>
+                        </div>
+                        <div class="btn">
+                            <a href="#" >Nova Turma</a>
+                        </div>
+                      </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

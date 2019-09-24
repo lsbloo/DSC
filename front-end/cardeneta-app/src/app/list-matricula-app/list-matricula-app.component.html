@@ -1,1 +1,32 @@
-<p>list-matricula-app works!</p>
+
+<form action="salvar.html">
+    <div class="container">
+        <h1>Nova Turma</h1>
+    
+        <label for="text"><b>Nome Turma</b></label>
+        <input type="text" placeholder="Digite o nome da turma" name="turma">
+
+        <label for="number"><b>Código</b></label>
+        <input type="number" placeholder="Digite o código" name="codigo"><br>
+      
+        <label for="number"><b>Periodo</b></label>
+        <input type="number" placeholder="Digite o periodo" name="periodo">
+
+        <label for="text"><b>Turno</b></label>
+        <select name="turno">
+            <option value="manha">Manha</option>
+            <option value="tarde">Tarde</option>
+            <option value="noite">Noite</option>
+        </select><br>
+
+        <label for="text"><b>Professor</b></label>
+        <input type="text" placeholder="Digite o nome do professor" name="professor"><br>
+
+        <label for="number"><b>Quantidade de vagas</b></label>
+        <input type="number" placeholder="Digite a quantidade de vagas" name="vagas"><br>
+
+        <button class="btn">Editar</button>
+        <button type="submit" class="btn">Salvar</button>
+        <button class="btn">Novo Aluno</button>
+    </div>
+</form> 

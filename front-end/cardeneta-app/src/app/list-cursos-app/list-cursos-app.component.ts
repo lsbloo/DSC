@@ -11,49 +11,11 @@ import {Curso} from '../models/Curso';
   styleUrls: ['./list-cursos-app.component.css']
 })
 export class ListCursosAppComponent implements OnInit {
-
-  cursoService: CursoService;
-  formularioCurso: FormGroup;
-  formBuilder: FormBuilder;
-  router: Router;
-  curso: Curso;
-
-  constructor(cursoService: CursoService, formBuilder: FormBuilder,router: Router) { 
-    this.cursoService = cursoService;
-    this.formBuilder=formBuilder;
-    this.router=router;
-    this.criarForm();
-  }
-
-
-  criarForm(){
-    this.formularioCurso = this.formBuilder.group({
-        codigo: [null],
-        nome: [null],
-        professor: [null],
-        quantidade_alunos: [null],
-        idioma_id: [null]
-
-    });
-  }
-  postInsert(){
-
-    const data = this.formularioCurso.value;
-    this.curso = new Curso(data.nome,data.codigo,data.professor,data.quantidade_alunos,data.idioma_id);
-    var result = this.cursoService.insert(this.curso);
-    if(result){
-      // ok
-    }else{
-      // curso ja existe;
-    }
-
-  }
-
-  getCursos(){
-    var result = this.cursoService.getAll();
-    if(result!=null){
-      // ok
-    }
+  cabecalho: string;
+  texto: String;
+  constructor() { 
+    this.cabecalho = 'Turmas'
+    this.texto = 'Nesta sessão você encontrará a lista de todos as turmas cadastradas em nossa instituição. A esquerda você encontrará nosso menu, onde terá acesso a todas as informações disponíveis no nosso sistema. Fique a vontade para navegar por nosso portal '
   }
 
   ngOnInit() {

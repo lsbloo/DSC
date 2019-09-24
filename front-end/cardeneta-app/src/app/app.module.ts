@@ -16,9 +16,9 @@ import { RegisterAppComponent } from './register-app/register-app.component';
 import { HomeComponent } from './home-page/home.component';
 import { HomeModule } from './home-page/home.module';
 import {LoginService} from "./login/login.service";
-import {CursoService} from './list-cursos-app/cursos.service';
-import {AlunoService} from './list-alunos-app/aluno.service';
-
+import { CursosService} from "./cursos/cursos.service";
+import { CusosComponent} from './cursos/CursosComponent';
+import {CursosComponent} from './cursos/cursos.component';
 
 const routes: Routes = [
   {
@@ -36,7 +36,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashComponent,
-    children:
+/*     children:
     [
                 {
                 path: 'dashboard-list-cursos',
@@ -54,8 +54,27 @@ const routes: Routes = [
                   path: 'dashboard-list-turma',
                   component: ListTurmaAppComponent
                 }
-    ]
-  }
+    ] */
+
+  },
+  {
+    path: 'list-matricula',
+    component: ListMatriculaAppComponent
+  },
+  {
+    path: 'list-alunos',
+    component: ListAlunosAppComponent
+  },
+  {
+  path: 'list-cursos',
+  component: ListCursosAppComponent
+  },
+  
+  {
+  path: 'list-turma',
+  component: ListTurmaAppComponent
+  },
+  
 ];
 
 @NgModule({
@@ -65,9 +84,11 @@ const routes: Routes = [
     LoginComponent,
     ListAlunosAppComponent,
     ListCursosAppComponent,
+    CusosComponent,
     ListMatriculaAppComponent,
     ListTurmaAppComponent,
     RegisterAppComponent,
+    CursosComponent
   ],
   imports: [
     BrowserModule,
@@ -76,8 +97,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
   ],
-  
-  providers: [LoginService,RegisterService,CursoService,AlunoService],
+
+  providers: [LoginService,CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

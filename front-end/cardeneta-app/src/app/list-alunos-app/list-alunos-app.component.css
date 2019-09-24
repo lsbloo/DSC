@@ -1,0 +1,46 @@
+#bg-transition{
+    background: #1516169c; transition: all .6s; backface-visibility: hidden; 
+    font-size: 15px; color: rgb(99, 95, 95); text-transform: uppercase;
+    color: #437ecc; color:rgb(247, 241, 241); border: 0; opacity: 100%;
+ }
+ 
+ #navbar-gradient{
+   background: rgb(9,4,56);
+   background: linear-gradient(270deg, rgba(9,4,56,0.8827906162464986) 0%, rgba(54,39,41,1) 100%);
+   font-size: 15px; color: rgb(99, 95, 95); text-transform: uppercase;
+ }
+ 
+ #sidebar {
+   min-height: 100vh;
+   margin-left: -15rem;
+   background: rgb(9,4,56);
+   background: linear-gradient(0deg, rgba(9,4,56,0.8827906162464986) 0%, rgba(54,39,41,1) 100%);
+   }
+   
+ .navbar-brand {
+   width: 200px;
+   background: url(../../assets/img/logo2.png)  center no-repeat;
+   border: 25;
+   text-indent: -99999px;
+ }
+ 
+ 
+ #sidebar .sidebar-heading {
+   padding: 0.875rem 1.25rem;
+   font-size: 1.2rem;
+ }
+ 
+ #sidebar .list-group {
+   width: 15rem;
+ }
+ 
+ 
+ @media (min-width: 768px) {
+   #sidebar {
+     margin-left: 0;
+   }
+ 
+  
+ 
+ }
+ 
