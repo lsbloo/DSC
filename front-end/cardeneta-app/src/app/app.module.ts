@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule, ɵSWITCH_COMPILE_NGMODULE__POST_R3__, Component } from '@angular/core';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {FormBuilder} from '@angular/forms';
-
+import {RegisterService} from './register-app/register.service';
 
 import { AppComponent } from './app.component';
 import { DashComponent } from './dash/dash.component';
@@ -21,6 +21,10 @@ import { CusosComponent} from './cursos/CursosComponent';
 import {CursosComponent} from './cursos/cursos.component';
 
 const routes: Routes = [
+  {
+    path: 'registeruser',
+    component: RegisterAppComponent
+  },
   {
     path: '',
     component: HomeComponent
@@ -85,7 +89,6 @@ const routes: Routes = [
     ListTurmaAppComponent,
     RegisterAppComponent,
     CursosComponent
-    
   ],
   imports: [
     BrowserModule,
@@ -94,6 +97,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
   ],
+
   providers: [LoginService,CursosService],
   bootstrap: [AppComponent]
 })

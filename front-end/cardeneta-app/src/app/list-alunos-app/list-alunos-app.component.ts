@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
+import {Aluno} from '../models/Aluno';
+import {AlunoService} from './aluno.service';
+
+
 
 @Component({
   selector: 'app-list-alunos-app',

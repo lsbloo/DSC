@@ -41,7 +41,6 @@ export class LoginComponent implements OnInit {
         setTimeout( () => {this.router.navigate(['/dashboard']);},1000);
         this.loginService.createSessionUserAuth(user.email);
    }else{
-     //
      alert("Email ou password incorreto!");
    }
   

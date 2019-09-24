@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {RegisterService} from './register.service';
+import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+import {User} from '../models/User';
 
 @Component({
   selector: 'app-register-app',
@@ -7,8 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterAppComponent implements OnInit {
 
-  constructor() { }
+  registerService: RegisterService;
+  formBuilder: FormBuilder;
+  formularioRegister: FormGroup;
+  router: Router;
+  user: User;
 
+  // --> 
+  constructor(registerService: RegisterService, formularioRegister: FormGroup, formBuilder: FormBuilder,router: Router) {
+    this.registerService=registerService;
+    this.formularioRegister=formularioRegister;
+    this.router=router;
+    this.formBuilder = formBuilder;
+    this.buildForm();
+   }
+
+
+   buildForm(){
+     this.formularioRegister = this.formBuilder.group({
+        email: [null],
+        password: [null],
+        password_confirm: [null]
+     });
+   }
+
+   postRegister(){
+    const data = this.formularioRegister.value;
+     
+
+
+   }
   ngOnInit() {
   }
 
